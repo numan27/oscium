@@ -1,0 +1,11 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.cont {
+  @include RP(
+    (
+      "width": 24,
+      "height": 24,
+    )
+  );
+}

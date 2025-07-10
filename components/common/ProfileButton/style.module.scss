@@ -1,0 +1,41 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.profileBtnContainer {
+  background-color: $SECONDARY !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: $WHITE !important;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  @include RP(
+    (
+      "height": 48,
+      "width": 48,
+      "max-height": 48,
+      "max-width": 48,
+    ),
+    1
+  );
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.profileIcon {
+  img {
+    @include RP(
+      (
+        "height": 24,
+        "width": 24,
+      )
+    );
+  }
+}
