@@ -1,0 +1,78 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionContainer {
+  background: linear-gradient(
+    91.61deg,
+    #345aab -13.47%,
+    #6fa0c8 21.33%,
+    #91e3ea 60.58%,
+    #c7fdec 113.92%
+  );
+
+  @include RP(
+    (
+      "padding-top": 40,
+      "padding-bottom": 40,
+    ),
+    1
+  );
+  h2 {
+    color: $WHITE !important;
+    @include RP(
+      (
+        "font-size": 32,
+        "line-height": 48,
+      ),
+      1
+    );
+  }
+  P {
+    color: $WHITE !important;
+  }
+
+  .inputGroup {
+    display: flex;
+    @include RP(
+      (
+        "width": 600,
+        "padding-left": 32,
+        "height": 64,
+      ),
+      1
+    );
+    max-width: 100%;
+    background: #fff;
+    border-radius: 100px;
+    box-shadow: 0 2px 8px 0 #0001;
+    align-items: center;
+    padding: 4px 8px 4px 32px;
+    position: relative;
+    @media screen and (max-width: 600px) {
+      width: 100% !important;
+    }
+  }
+
+  .emailInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    @include RP(
+      (
+        "font-size": 16,
+      ),
+      1
+    );
+    color: #6c757d;
+    background: transparent;
+    padding: 16px 0;
+    border-radius: 999px 0 0 999px;
+  }
+
+  .subscribeBtn {
+    margin-left: 12px;
+    // height: 56px;
+    color: #fff !important;
+    box-shadow: none;
+  }
+}

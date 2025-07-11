@@ -37,7 +37,7 @@ function handleMouseLeave(label: string) {
         <NuxtLink to="/" :class="clsx(styles.logoContainer, '')">
           <img width="162" height="48" :src="Images.LOGO" alt="Oscium Logo">
         </NuxtLink>
-        <navOkay class="flex gap-6">
+        <navOkay class="lg:flex gap-6 hidden">
           <template v-for="link in headerLinks" :key="link.label">
             <div v-if="link.children" :class="styles.dropdown" @mouseenter="handleMouseEnter(link.label)"
               @mouseleave="handleMouseLeave(link.label)">
@@ -61,7 +61,7 @@ function handleMouseLeave(label: string) {
         </navOkay>
       </div>
       <div :class="clsx(styles.actionContainer, 'flex items-center gap-6')">
-        <div :class="clsx(styles.actions, 'flex items-center gap-3')">
+        <div :class="clsx(styles.actions, 'lg:flex items-center gap-3 hidden')">
           <div :class="clsx(styles.search, '')">
             <span :class="styles.cartContainer">
               <Icons.Search />
@@ -70,9 +70,6 @@ function handleMouseLeave(label: string) {
           <span :class="styles.cartContainer">
             <Icons.Cart />
           </span>
-          <!-- <span :class="styles.iconContainer">
-          <Icons.CART />
-        </span> -->
           <span :class="styles.iconContainer">
             <CommonProfileButton />
           </span>

@@ -16,6 +16,7 @@ import StarHalf from "./star-half.svg";
 import Benefits1 from "./benefit-1.svg";
 import Benefits2 from "./benefit-2.svg";
 import Benefits3 from "./benefit-3.svg";
+import Youtube from "./youtube.svg";
 
 export const Icons = {
   User,
@@ -36,4 +37,5 @@ export const Icons = {
   Benefits1,
   Benefits2,
   Benefits3,
+  Youtube,
 };

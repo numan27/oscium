@@ -6,6 +6,9 @@
     <HomeReviews />
     <HomeBenefits />
     <HomeProductCategories />
+    <HomeAbout />
+    <HomeBlogs />
+    <HomeNewsletter />
 
   </div>
 

@@ -61,6 +61,11 @@
 .sliderWrapper :global(.swiper-slide) {
   margin: 0 !important;
   padding: 0 !important;
+  @media screen and (max-width: 640px) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
 
 .sliderButton {

@@ -14,6 +14,11 @@ import Review2 from "./review-2.png";
 import BenefitsImg from "./benefits.png";
 import Product1 from "./product-1.png";
 import Product2 from "./product-2.png";
+import AboutImg from "./about.png";
+import Thumbnail from "./thumbnail.png";
+import Blog1 from "./blog-1.png";
+import Blog2 from "./blog-2.png";
+import Blog3 from "./blog-3.png";
 
 export const Images = {
   LOGO,
@@ -32,4 +37,9 @@ export const Images = {
   BenefitsImg,
   Product1,
   Product2,
+  AboutImg,
+  Thumbnail,
+  Blog1,
+  Blog2,
+  Blog3,
 };

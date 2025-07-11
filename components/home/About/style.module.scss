@@ -1,0 +1,133 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionWrapper {
+  background-color: #f8f9fa;
+  @include RP(
+    (
+      "padding-top": 60,
+      "padding-bottom": 100,
+    ),
+    1
+  );
+  .sectionContainer {
+    .videoWrapper {
+      .imgContainer {
+        h3 {
+          font-weight: 600 !important;
+          color: #212529 !important;
+          max-width: 80% !important;
+          @media screen and (max-width: 768px) {
+            max-width: 100% !important;
+          }
+          @include RP(
+            (
+              "font-size": 16,
+              "line-height": 26,
+            ),
+            1
+          );
+        }
+        h4 {
+          font-weight: 600 !important;
+          color: $HEADING !important;
+          @include RP(
+            (
+              "font-size": 14,
+            ),
+            1
+          );
+        }
+      }
+      .iconContainer {
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include RP(
+          (
+            "min-width": 48,
+            "min-height": 48,
+            "width": 48,
+            "height": 48,
+          ),
+          1
+        );
+        background: linear-gradient(
+          180deg,
+          #345aab 0%,
+          #6fa0c8 27.32%,
+          #91e3ea 58.13%,
+          #c7fdec 100%
+        );
+        border-radius: 50%;
+      }
+    }
+    .contentContainer {
+      .top,
+      .bottom {
+        @include RP(
+          (
+            "padding-left": 50,
+          ),
+          1
+        );
+        @media screen and (max-width: 510px) {
+          padding-left: 0 !important;
+        }
+      }
+      h3 {
+        color: $PRIMARY !important;
+        position: relative;
+
+        @include RP(
+          (
+            "font-size": 20,
+            "line-height": 28,
+            "padding-left": 20,
+            "margin-top": 15,
+          ),
+          1
+        );
+        @media screen and (max-width: 510px) {
+          padding-left: 0 !important;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 3px !important;
+          height: 100%;
+          background: $PRIMARY;
+          left: 0;
+
+          @media screen and (max-width: 510px) {
+            display: none !important;
+          }
+        }
+      }
+      .bottom {
+        p {
+          color: #495057 !important;
+          @include RP(
+            (
+              "font-size": 15,
+            ),
+            1
+          );
+        }
+        button {
+          @include RP(
+            (
+              "margin-top": 20,
+            ),
+            1
+          );
+        }
+      }
+      img {
+        width: 100% !important;
+        height: auto;
+      }
+    }
+  }
+}
