@@ -20,11 +20,13 @@
     "clsx": "^2.1.1",
     "nuxt": "^3.17.6",
     "sass": "^1.89.2",
+    "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
     "vue": "^3.5.17"
   },
   "devDependencies": {
-    "@nuxtjs/google-fonts": "^3.2.0"
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "vite-svg-loader": "^5.1.0"
   }
 }

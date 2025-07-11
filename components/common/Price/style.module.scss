@@ -1,0 +1,14 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+h4 {
+  color: $PRIMARY !important;
+  span {
+    @include RP(
+      (
+        "font-size": 16,
+      ),
+      1
+    );
+  }
+}

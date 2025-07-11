@@ -1,0 +1,154 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.navbar {
+  background-color: $WHITE;
+  @include RP(
+    (
+      "height": 88,
+    ),
+    1
+  );
+
+  .logoContainer {
+    img {
+      @include RP(
+        (
+          "width": 162,
+          "height": 48,
+        ),
+        1
+      );
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropdownToggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: $HEADING;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+    &:hover {
+      color: $PRIMARY;
+    }
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $WHITE;
+    min-width: 200px;
+    box-shadow:
+      0 8px 32px 0 rgba(52, 90, 171, 0.16),
+      0 1.5px 8px 0 rgba(52, 90, 171, 0.08);
+    z-index: 1000;
+    @include RP(
+      (
+        "border-radius": 10,
+      ),
+      1
+    );
+    padding: 0;
+    border: none;
+    margin-top: 0.75rem;
+    pointer-events: auto;
+    transition:
+      box-shadow 0.2s,
+      background 0.2s;
+  }
+
+  .dropdownItem {
+    color: $HEADING;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer !important;
+    transition:
+      background 0.18s,
+      color 0.18s;
+    @include RP(
+      (
+        "border-radius": 10,
+        "font-size": 14,
+        "padding-top": 8,
+        "padding-bottom": 8,
+        "padding-left": 16,
+        "padding-right": 16,
+      ),
+      1
+    );
+    letter-spacing: 0.01em;
+    &:hover {
+      background-color: $SECONDARY;
+      color: $PRIMARY;
+    }
+  }
+}
+
+.actionContainer {
+}
+
+.actions {
+  .search {
+    border-right: 1px solid $BORDER;
+    padding-right: 10px;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  cursor: pointer;
+  svg {
+    @include RP(
+      (
+        "height": 24,
+        "width": 24,
+      ),
+      1
+    );
+    path {
+      stroke: $HEADING !important;
+    }
+  }
+}
+.cartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  svg {
+    @include RP(
+      (
+        "height": 24,
+        "width": 24,
+      ),
+      1
+    );
+    path {
+      stroke: $HEADING !important;
+    }
+  }
+  &:hover {
+    background-color: $SECONDARY;
+  }
+}

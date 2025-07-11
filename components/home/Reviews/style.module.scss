@@ -1,0 +1,131 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionContainer {
+  background-color: $PRIMARY;
+  @include RP(
+    (
+      "padding-top": 40,
+      "padding-bottom": 40,
+    ),
+    1
+  );
+  .heading {
+    h2 {
+      color: $WHITE !important;
+      text-transform: capitalize;
+      max-width: 50% !important;
+      margin: 0 auto !important;
+      @media screen and (max-width: 768px) {
+        max-width: 100% !important;
+      }
+    }
+    p {
+      @include RP(
+        (
+          "font-size": 15,
+        ),
+        1
+      );
+    }
+    .starsContainer {
+      span {
+        text-transform: uppercase;
+        font-weight: 400 !important;
+        color: $WHITE;
+        @include RP(
+          (
+            "font-size": 12,
+          ),
+          1
+        );
+      }
+    }
+  }
+  .sliderWrapper {
+    @include RP(
+      (
+        "margin-top": 36,
+      ),
+      1
+    );
+  }
+}
+
+.sliderButton {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100%;
+  cursor: pointer !important;
+  @include RP(
+    (
+      "min-width": 48,
+      "min-height": 48,
+    ),
+    1
+  );
+  &:hover {
+    border-color: $PRIMARY;
+    background-color: $PRIMARY;
+    svg {
+      path {
+        fill: #fff !important;
+      }
+    }
+  }
+  svg {
+    path {
+      fill: #6c757d !important;
+    }
+  }
+}
+
+.reviewsSliderWrapper {
+  button.reviewsSliderButton {
+    background-color: $PRIMARY;
+    border: 1px solid #adb5bd !important;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+    @include RP(
+      (
+        "min-width": 48,
+        "min-height": 48,
+      ),
+      1
+    );
+    svg {
+      path {
+        fill: #adb5bd !important;
+      }
+    }
+    &:hover {
+      background-color: $WHITE !important;
+      border-color: #adb5bd !important;
+      svg {
+        path {
+          fill: $PRIMARY !important;
+        }
+      }
+    }
+  }
+  span {
+    color: #adb5bd !important;
+  }
+  .custom-fraction-pagination,
+  .swiper-pagination-fraction {
+    color: #adb5bd !important;
+  }
+  .custom-fraction-pagination .swiper-pagination-current,
+  .custom-fraction-pagination .swiper-pagination-total {
+    color: #adb5bd !important;
+  }
+}

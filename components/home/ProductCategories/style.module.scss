@@ -1,0 +1,263 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionContainer {
+  @include RP(
+    (
+      "padding-top": 40,
+      "padding-bottom": 40,
+    ),
+    1
+  );
+  .heading {
+    p {
+      @include RP(
+        (
+          "font-size": 15,
+        ),
+        1
+      );
+    }
+    h2 {
+      @include RP(
+        (
+          "line-height": 50,
+        ),
+        1
+      );
+    }
+  }
+  .sliderWrapper {
+    @include RP(
+      (
+        "margin-top": 36,
+      ),
+      1
+    );
+  }
+  .content {
+    @include RP(
+      (
+        "padding-left": 60,
+      ),
+      1
+    );
+    span {
+      color: #6c757d !important;
+      letter-spacing: 2px;
+      @include RP(
+        (
+          "font-size": 15,
+        ),
+        1
+      );
+    }
+    .swiper-pagination-fraction {
+      color: #6c757d !important;
+    }
+  }
+}
+
+.sliderWrapper :global(.swiper-slide) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sliderButton {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100%;
+  cursor: pointer !important;
+  @include RP(
+    (
+      "width": 48,
+      "height": 48,
+    ),
+    1
+  );
+  &:hover {
+    border-color: $PRIMARY;
+    background-color: $PRIMARY;
+    svg {
+      path {
+        fill: #fff !important;
+      }
+    }
+  }
+  svg {
+    path {
+      fill: #6c757d !important;
+    }
+  }
+}
+
+.tabsContainer {
+  background: #f9fafb;
+  border: 1px solid #f2f4f7;
+  @include RP(
+    (
+      "height": 48,
+    ),
+    1
+  );
+  border-radius: 9999px;
+  display: flex;
+  padding: 4px;
+}
+
+.tab {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  border: none;
+  height: 100% !important;
+  outline: none;
+  cursor: pointer;
+  @include RP(
+    (
+      "font-size": 16,
+    ),
+    1
+  );
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.activeTab {
+  background: #fff;
+  color: $PRIMARY;
+  box-shadow: 0px 1px 2px 0px #1018280f;
+  box-shadow: 0px 1px 3px 0px #1018281a;
+}
+
+.product-slider-pagination {
+  width: 70px !important;
+  min-width: 70px !important;
+  max-width: 70px !important;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.customDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dee2e6;
+  display: inline-block;
+  position: relative;
+  transition:
+    background 0.2s,
+    width 0.2s,
+    height 0.2s;
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  background: $PRIMARY;
+  border-radius: 50%;
+  /* No border */
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  transition:
+    background 0.2s,
+    width 0.2s,
+    height 0.2s;
+  overflow: visible;
+}
+
+.activeDot::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  background: conic-gradient(
+    from 0deg,
+    #345aab 0%,
+    #6fa0c8 27.32%,
+    #91e3ea 58.13%,
+    #c7fdec 100%,
+    transparent calc(var(--dot-progress, 0) * 100%),
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle,
+    transparent 6px,
+    #000 7.6px,
+    #000 9.2px,
+    transparent 9.2px
+  );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent 6px,
+    #000 7.6px,
+    #000 9.2px,
+    transparent 9.2px
+  );
+  border: none;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: normal;
+}
+
+.activeDot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $PRIMARY;
+  z-index: 3;
+}
+.swiper-pagination-current {
+  color: #6c757d;
+}
+
+.swiper-pagination-total {
+  color: #6c757d;
+}
+
+.swiper-pagination-fraction::after,
+.swiper-pagination-fraction::before {
+  color: #6c757d;
+}
+
+.swiper-pagination-fraction span + span {
+  margin-left: 4px;
+}
+
+.swiperContainer {
+  @include RP(
+    (
+      "padding-left": 100,
+    ),
+    1
+  );
+  z-index: 999 !important;
+
+  max-width: 70%;
+  @media screen and (max-width: 768px) {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+  }
+}

@@ -1,0 +1,1 @@
+import{_ as t,c as a,a as o,o as n}from"./B1U7WDgL.js";const r={};function s(c,e){return n(),a("div",null,e[0]||(e[0]=[o("h1",null,"About Page",-1),o("p",null,"This is the about page of our Nuxt 3 application.",-1)]))}const u=t(r,[["render",s]]);export{u as default};

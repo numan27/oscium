@@ -1,0 +1,88 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionWrapper {
+  background-color: #edf6ff;
+  @include RP(
+    (
+      "padding-top": 60,
+      "padding-bottom": 100,
+    ),
+    1
+  );
+  .sectionContainer {
+    .BenefitsImg {
+      @include RP(
+        (
+          "width": 750,
+        ),
+        1
+      );
+      @media screen and (max-width: 640px) {
+        width: 100% !important;
+      }
+    }
+    .contentContainer {
+      @include RP(
+        (
+          "margin-top": 30,
+        ),
+        1
+      );
+
+      @media screen and (max-width: 768px) {
+        margin-top: 0 !important;
+      }
+      .cardWrapper {
+        .card {
+          border: 1px solid #e9ecef;
+          background-color: $WHITE;
+          @include RP(
+            (
+              "padding-top": 24,
+              "padding-bottom": 24,
+              "padding-left": 20,
+              "padding-right": 20,
+              "border-radius": 20,
+            ),
+            1
+          );
+
+          .iconContainer {
+            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include RP(
+              (
+                "min-width": 48,
+                "min-height": 48,
+              ),
+              1
+            );
+            background: linear-gradient(
+              180deg,
+              #345aab 0%,
+              #6fa0c8 27.32%,
+              #91e3ea 58.13%,
+              #c7fdec 100%
+            );
+            border-radius: 50%;
+          }
+          h3 {
+            @include RP(
+              (
+                "font-size": 20,
+                "line-height": 36,
+              ),
+              1
+            );
+          }
+          p {
+            color: #6c757d !important;
+          }
+        }
+      }
+    }
+  }
+}

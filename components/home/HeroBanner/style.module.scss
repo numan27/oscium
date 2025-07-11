@@ -1,0 +1,87 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionContainer {
+  // max-height: 700px !important;
+  min-height: 700px !important;
+  background-color: $SECONDARY_LIGHT;
+  padding-bottom: 0 !important;
+
+  .customContainer {
+    .contentContainer {
+      h4 {
+        color: $PRIMARY !important;
+      }
+      p,
+      h1 {
+        max-width: 70% !important;
+        @media screen and (max-width: 768px) {
+          width: 100% !important;
+          text-align: center;
+        }
+      }
+      button {
+        @include RP(
+          (
+            "padding-left": 40,
+            "padding-right": 40,
+          ),
+          1
+        );
+      }
+    }
+
+    .imgContainer {
+      img {
+        width: 100% !important;
+        max-width: 650px !important;
+      }
+    }
+  }
+  .shapeContainer {
+    img {
+      height: 100% !important;
+    }
+  }
+  .sliderButton {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease-in-out;
+    border-radius: 100%;
+    cursor: pointer !important;
+    // min-width: 40px !important;
+    // min-height: 40px !important;
+    @include RP(
+      (
+        "width": 48,
+        "height": 48,
+      ),
+      1
+    );
+    &:hover {
+      border-color: $PRIMARY;
+      background-color: $PRIMARY;
+      svg {
+        path {
+          fill: #fff !important;
+        }
+      }
+    }
+
+    svg {
+      // @include RP(
+      //   (
+      //     "width": 24,
+      //     "height": 24,
+      //   ),
+      //   1
+      // );
+      path {
+        fill: #6c757d !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.customSliderContainer {
+  position: relative;
+}
+
+.sliderButton {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100%;
+  cursor: pointer !important;
+  @include RP(
+    (
+      "min-width": 48,
+      "min-height": 48,
+    ),
+    1
+  );
+  &:hover {
+    border-color: $PRIMARY;
+    background-color: $PRIMARY;
+    svg {
+      path {
+        fill: #fff !important;
+      }
+    }
+  }
+  svg {
+    path {
+      fill: #6c757d !important;
+    }
+  }
+}
+
+.sliderWrapper {
+  @include RP(
+    (
+      "margin-top": 36,
+    ),
+    1
+  );
+}
+
+.swiper-pagination-bullets {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #dee2e6;
+  border-radius: 50%;
+  opacity: 1;
+  transition: background 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: $PRIMARY;
+}
+
+.swiper-pagination-fraction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include RP(
+    (
+      "font-size": 15,
+    ),
+    1
+  );
+  font-weight: 500;
+  gap: 8px;
+  color: #6c757d;
+}
+
+.swiper-pagination-current {
+  color: #6c757d;
+}
+
+.swiper-pagination-total {
+  color: #6c757d;
+}
+
+.swiper-pagination-fraction::after,
+.swiper-pagination-fraction::before {
+  color: #6c757d;
+}
+
+.swiper-pagination-fraction span + span {
+  margin-left: 4px;
+}
+
+.custom-fraction-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include RP(
+    (
+      "font-size": 15,
+    ),
+    1
+  );
+  font-weight: 500 !important;
+  color: #6c757d;
+  min-width: 60px;
+  letter-spacing: 4px !important;
+}
+
+.custom-fraction-pagination .swiper-pagination-current,
+.custom-fraction-pagination .swiper-pagination-total {
+  color: #6c757d;
+  font-variant-numeric: tabular-nums;
+}
+
+.custom-fraction-pagination .swiper-pagination-current,
+.custom-fraction-pagination .swiper-pagination-total {
+  min-width: 24px;
+  text-align: center;
+}
+
+.custom-fraction-pagination::after,
+.custom-fraction-pagination::before {
+  color: #6c757d;
+}
+
+.custom-fraction-pagination span + span {
+  margin-left: 0;
+}
+
+.reviewsSlider {
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 24px;
+    border-radius: 4px;
+  }
+}
+
+.testimonialsSlider {
+  .sliderButton {
+    background-color: $PRIMARY;
+    border: 1px solid #adb5bd !important;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+    @include RP(
+      (
+        "min-width": 48,
+        "min-height": 48,
+      ),
+      1
+    );
+    svg {
+      path {
+        fill: #adb5bd !important;
+      }
+    }
+    &:hover {
+      background-color: $WHITE !important;
+      border-color: #adb5bd;
+      svg {
+        path {
+          fill: $PRIMARY !important;
+        }
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+}
+
+button.reviewsSliderButton {
+  background-color: $PRIMARY;
+  border: 1px solid #adb5bd !important;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: all 0.3s;
+  cursor: pointer;
+  @include RP(
+    (
+      "min-width": 48,
+      "min-height": 48,
+    ),
+    1
+  );
+  svg {
+    path {
+      fill: #adb5bd !important;
+    }
+  }
+  &:hover {
+    background-color: $WHITE !important;
+    border-color: #adb5bd !important;
+    svg {
+      path {
+        fill: $PRIMARY !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderButton {
+    @include RP(
+      (
+        "width": 40,
+        "height": 40,
+      ),
+      1
+    );
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 20px;
+  }
+}

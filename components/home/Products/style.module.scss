@@ -1,0 +1,62 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.sectionContainer {
+  @include RP(
+    (
+      "padding-top": 40,
+      "padding-bottom": 40,
+    ),
+    1
+  );
+  .heading {
+    p {
+      @include RP(
+        (
+          "font-size": 15,
+        ),
+        1
+      );
+    }
+  }
+  .sliderWrapper {
+    @include RP(
+      (
+        "margin-top": 36,
+      ),
+      1
+    );
+  }
+}
+
+.sliderButton {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100%;
+  cursor: pointer !important;
+  @include RP(
+    (
+      "width": 48,
+      "height": 48,
+    ),
+    1
+  );
+  &:hover {
+    border-color: $PRIMARY;
+    background-color: $PRIMARY;
+    svg {
+      path {
+        fill: #fff !important;
+      }
+    }
+  }
+  svg {
+    path {
+      fill: #6c757d !important;
+    }
+  }
+}

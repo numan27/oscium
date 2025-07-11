@@ -1,0 +1,96 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.cardContainer {
+  box-shadow: 0px 0px 40px 0px #34365114;
+  background-color: $WHITE;
+
+  // max-width: 600px;
+  @include RP(
+    (
+      "border-radius": 20,
+      "padding-top": 28,
+      "padding-bottom": 28,
+      "padding-left": 24,
+      "padding-right": 24,
+    ),
+    1
+  );
+  .heading {
+    .stars {
+      svg {
+        path {
+          fill: $PRIMARY !important;
+        }
+      }
+    }
+    span {
+      color: #6c757d;
+      font-weight: 400 !important;
+      @include RP(
+        (
+          "font-size": 12,
+        ),
+        1
+      );
+    }
+  }
+  .contentContainer {
+    @include RP(
+      (
+        "margin-top": 24,
+      ),
+      1
+    );
+    .imgContainer {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      min-width: 172px;
+      @include RP(
+        (
+          "width": 172,
+          "height": 156,
+          "padding": 16,
+        ),
+        1
+      );
+      img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+      }
+    }
+    h3 {
+      font-weight: 600 !important;
+      color: $PRIMARY !important;
+      @include RP(
+        (
+          "font-size": 16,
+          "line-height": 26,
+        ),
+        1
+      );
+    }
+    h4 {
+      font-weight: 600 !important;
+      color: #212529 !important;
+      @include RP(
+        (
+          "font-size": 14,
+          "line-height": 24,
+        ),
+        1
+      );
+    }
+    p {
+      color: #495057 !important;
+      @include RP(
+        (
+          "font-size": 15,
+        ),
+        1
+      );
+    }
+  }
+}

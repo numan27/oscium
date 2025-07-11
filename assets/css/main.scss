@@ -1,0 +1,76 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+h1 {
+  @include RP(
+    (
+      "font-size": 56,
+      "line-height": 70,
+    ),
+    1
+  );
+
+  @media screen and (max-width: 640px) {
+    @include RP(
+      (
+        "font-size": 36,
+        "line-height": 48,
+      ),
+      1
+    );
+  }
+}
+h2 {
+  font-weight: 600 !important;
+  @include RP(
+    (
+      "font-size": 40,
+    ),
+    1
+  );
+
+  @media screen and (max-width: 640px) {
+    @include RP(
+      (
+        "font-size": 30,
+      ),
+      1
+    );
+  }
+}
+h3 {
+  @include RP(
+    (
+      "font-size": 28,
+      "line-height": 36,
+    ),
+    1
+  );
+}
+h4 {
+  @include RP(
+    (
+      "font-size": 24,
+    ),
+    1
+  );
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $HEADING !important;
+  font-weight: 700 !important;
+}
+
+p {
+  font-weight: 400 !important;
+  color: $DESC;
+  @include RP(
+    (
+      "font-size": 16,
+    ),
+    1
+  );
+}

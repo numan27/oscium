@@ -1,0 +1,70 @@
+@use "~/assets/colors.scss" as *;
+@use "~/assets/responsive.module.scss" as *;
+
+.cardContainer {
+  box-shadow: 0px 0px 40px 0px #34365114;
+  // max-width: 600px;
+  @include RP(
+    (
+      "border-radius": 20,
+      "padding": 12,
+    ),
+    1
+  );
+  .imgContainer {
+    background-color: #f8f9fa;
+    height: 360px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include RP(
+      (
+        "border-radius": 20,
+        "padding": 24,
+      ),
+      1
+    );
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .contentContainer {
+    h3 {
+      max-width: 85% !important;
+      @media screen and (max-width: 640px) {
+        max-width: 100% !important;
+      }
+    }
+    padding: {
+      color: #6c757d !important;
+    }
+
+    @include RP(
+      (
+        "padding": 12,
+      ),
+      1
+    );
+    .cardButton {
+      background-color: transparent !important;
+      border: 1px solid $PRIMARY !important;
+      span {
+        color: $PRIMARY !important;
+      }
+      &:hover {
+        background-color: $PRIMARY !important;
+        span {
+          color: $WHITE !important;
+        }
+      }
+      .activecardbutton {
+        background-color: $PRIMARY !important;
+        color: $WHITE !important;
+        border: 1px solid $PRIMARY !important;
+      }
+    }
+  }
+}

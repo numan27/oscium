@@ -1,6 +1,7 @@
 <script setup>
-import { Icons } from '~/assets/icons';
 import $style from './style.module.scss';
+import { Icons } from '~/assets/icons';
+
 
 defineProps({
     onClick: Function,
@@ -14,6 +15,6 @@ defineProps({
 <template>
     <button :class="[$style.profileBtnContainer, containerStyle]" :disabled="disabled" type="button" :style="style"
         @click="onClick">
-        <!-- <img :src="Icons.USER" :class="[$style.profileIcon, iconStyle]" alt="Profile" /> -->
+        <Icons.User />
     </button>
 </template>
